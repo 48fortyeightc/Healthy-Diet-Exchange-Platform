@@ -2,26 +2,33 @@
 
 本项目的核心在于展示数据库的设计深度，涵盖了从基础建模到高级特性（触发器、存储过程、视图、加密）的全面应用。
 
+## 0. 数据库全量 ER 图
+![全量 ER 图](../img/er_diagram_global.png)
+
 ## 1. 数据库架构设计 (E-R 逻辑)
 
 本项目包含 11 张核心表，主要分为以下四个模块：
 
 ### 1.1 用户与安全模块
+![用户与安全模块](../img/er_user_security.png)
 - **users**：账户主表，包含密码哈希、账户状态、逻辑删除。
 - **user_profiles**：用户基本资料，与 users 一对一关联。
 - **health_archives**：敏感健康档案，支持 **CHECK 约束**。
 
 ### 1.2 内容管理模块
+![内容管理模块](../img/er_recipe_content.png)
 - **recipes**：食谱主表，包含难度、时间、状态审核。
 - **recipe_steps**：级联存储烹饪步骤。
 - **recipe_ingredients**：存储所需食材。
 - **posts**：健康资讯文章表。
 
 ### 1.3 社区互动模块
+![社区互动模块](../img/er_community_interaction.png)
 - **comments / post_comments**：实现用户对内容的多对多互动。
 - **likes / post_likes**：通过 **复合主键 (user_id, target_id)** 确保收藏行为的唯一性。
 
 ### 1.4 食材共享与审计
+![食材共享与审计](../img/er_sharing_audit.png)
 - **ingredient_shares**：记录余量食材，包含区域信息。
 - **audit_logs**：审计日志表，采用 **JSON 格式** 存储变更前后的原始数据。
 

@@ -40,6 +40,14 @@
 本项目将复杂的空间地理坐标优化为更具实用性的“行政区划检索”。
 - **查询逻辑**：`ShareController` 接收 `region` 参数，执行精确匹配过滤。
 
+![食材共享](../img/ingredient_sharing.png)
+
+### 2.5 健康资讯广场
+![社区资讯](../img/community_post_list.png)
+
+### 2.6 系统管理与审核
+![系统管理](../img/admin_user_management.png)
+
 ---
 
 ## 3. 安全性实现
