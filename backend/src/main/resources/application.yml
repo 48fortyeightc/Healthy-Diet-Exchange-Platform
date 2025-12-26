@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/healthy_diet_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: 123123 # 已根据用户提供修改
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  
+  mybatis-plus:
+    mapper-locations: classpath:mapper/*.xml
+    type-aliases-package: com.healthy.diet.entity
+    configuration:
+      map-underscore-to-camel-case: true
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+server:
+  port: 8080
+
+# 安全配置示例
+jwt:
+  secret: aGVhbHRoeS1kaWV0LXBsYXRmb3JtLXNlY3JldC1rZXktMjAyNTEyMjU=
+  expiration: 86400 # 24小时
+
